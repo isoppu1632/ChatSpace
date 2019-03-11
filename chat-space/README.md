@@ -23,7 +23,7 @@ ruby 2.5.1p57 (2018-03-29 revision 63029)
 ### Association
 - has_many :messages
 - has_many :groups through: :members
-
+- has_many :members
 
 
 ## groupsテーブル
@@ -38,7 +38,7 @@ ruby 2.5.1p57 (2018-03-29 revision 63029)
 ### Association
 - has_many :messages
 - has_many :users through: :members
-- accepts_nested_attributes_for :members
+- has_many :members
 
 
 
@@ -46,7 +46,7 @@ ruby 2.5.1p57 (2018-03-29 revision 63029)
 
 |Column|Type|Options|
 |------|----|-------|
-|body|text|null: false|
+|body|text|
 |image|string|
 |creatid_at|timestamp|
 |group_id|integer|null: false, foreign_key: true|
