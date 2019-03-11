@@ -35,7 +35,7 @@ ruby 2.5.1p57 (2018-03-29 revision 63029)
 |creatid_at|timestamp|
 
 
-###Association
+### Association
 - has_many :messages
 - has_many :users through: :members
 - accepts_nested_attributes_for :members
