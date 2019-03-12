@@ -16,7 +16,7 @@ ruby 2.5.1p57 (2018-03-29 revision 63029)
 
 |Column|Type|Options|
 |------|----|-------|
-|name|text|null: false,unique: true|
+|name|string|null: false,unique: true|
 |email|text|null: false,unique: true|
 |password|string|null: false,unique: true|
 
@@ -30,8 +30,7 @@ ruby 2.5.1p57 (2018-03-29 revision 63029)
 
 |Column|Type|Options|
 |------|----|-------|
-|titel|text|null: false|
-|user_id|integer|null: false, foreign_key: true|
+|name|text|null: false|
 |creatid_at|timestamp|
 
 
