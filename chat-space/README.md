@@ -16,7 +16,7 @@ ruby 2.5.1p57 (2018-03-29 revision 63029)
 
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false,unique: true|
+|name|string|null: false,unique: true,add_index: :users, :name|
 |email|text|null: false,unique: true|
 |password|string|null: false,unique: true|
 
