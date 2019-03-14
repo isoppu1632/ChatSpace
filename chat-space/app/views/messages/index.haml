@@ -1,45 +1,40 @@
-!!!
-%html{lang: "ja"}
-  %head
-    %meta{charset: "utf-8"}
-  %body
-    .infomation
-      %p グループを作成しました
-    .wrapper
-      .leftVar
-        .leftVar-header
-          .leftVar-header__box
-            %p.leftVar-header__box__userName test-user
-            %ul.leftVar-header__box__menu
-              %li.leftVar-header__box__menu__edit
-                %a.fa.fa-edit{ :href => 'http://google.co.jp' }
-              %li.leftVar-header__box__menu__cog
-                %a.fa.fa-cog{ :href => 'http://google.co.jp' }
-        .leftVar-groups
-          %ul.leftVar-groups__list
-            = render 'group'
-            = render 'group'
-            = render 'group'
-      .main
-        .mainHeader
-          .mainHeader__box
-            %p.mainHeader__box__title test-group
-            %p.mainHeader__box__member Member： test-user
-          .mainHeader__button
-            %a.mainHeader__button__edit{ :href => 'http://google.co.jp' } Edit
-        %ul.mainMessages
-          %li.mainMessages__list
-            %p.mainMessages__list__userName isoppu
-            %p.mainMessages__list__createdAt 2019/03/13(Sat) 20:00:00
-            %p.mainMessages__list__text こんにちは！
-          %li.mainMessages__list
-            %p.mainMessages__list__userName isoppu
-            %p.mainMessages__list__createdAt 2019/03/13(Sat) 20:00:00
-            %p.mainMessages__list__text こんにちは！
-        .mainInput
-          %form.mainInput__box
-            %input.mainInput__box__type{ :placeholder => "type a message" }
-              %label.mainInput__box__type__image
-                %a.fa.fa-image{ :href => 'http://google.co.jp' }
-          %a.mainInput__send{ :href => 'http://google.co.jp' } Send
+.infomation
+  %p グループを作成しました
+.wrapper
+  .leftVar
+    .leftVar-header
+      .leftVar-header__box
+        %p.leftVar-header__box__userName test-user
+        %ul.leftVar-header__box__menu
+          %li.leftVar-header__box__menu__edit
+            %a.fa.fa-edit{ href: 'http://google.co.jp' }
+          %li.leftVar-header__box__menu__cog
+            %a.fa.fa-cog{ href: 'http://google.co.jp' }
+    .leftVar-groups
+      %ul.leftVar-groups__list
+        = render 'group'
+        = render 'group'
+        = render 'group'
+  .main
+    .mainHeader
+      .mainHeader__box
+        %p.mainHeader__box__title test-group
+        %p.mainHeader__box__member Member： test-user
+      .mainHeader__button
+        %a.mainHeader__button__edit{ href: 'http://google.co.jp' } Edit
+    %ul.mainMessages
+      %li.mainMessages__list
+        %p.mainMessages__list__userName isoppu
+        %p.mainMessages__list__createdAt 2019/03/13(Sat) 20:00:00
+        %p.mainMessages__list__text こんにちは！
+      %li.mainMessages__list
+        %p.mainMessages__list__userName isoppu
+        %p.mainMessages__list__createdAt 2019/03/13(Sat) 20:00:00
+        %p.mainMessages__list__text こんにちは！
+    .mainInput
+      %form.mainInput__box
+        %input.mainInput__box__type{ placeholder: "type a message" }
+          %label.mainInput__box__type__image
+            %a.fa.fa-image{ href: 'http://google.co.jp' }
+      %a.mainInput__send{ href: 'http://google.co.jp' } Send
 
