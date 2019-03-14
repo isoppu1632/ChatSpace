@@ -17,10 +17,9 @@
                 %a.fa.fa-cog{ :href => 'http://google.co.jp' }
         .leftVar-groups
           %ul.leftVar-groups__list
-            = link_to 'http://google.co.jp' do
-              %li.group
-                %p.group__title test-group
-                %p.group__message さようなら
+            = render 'group'
+            = render 'group'
+            = render 'group'
       .main
         .mainHeader
           .mainHeader__box
