@@ -7,7 +7,8 @@
         %p.leftVar-header__box__userName test-user
         %ul.leftVar-header__box__menu
           %li.leftVar-header__box__menu__edit
-            %a.fa.fa-edit{ href: 'http://google.co.jp' }
+            = link_to new_group_path do
+              = fa_icon 'edit', class:'icon'
           %li.leftVar-header__box__menu__cog
             %a.fa.fa-cog{ href: 'http://google.co.jp' }
     %ul.leftVar-groups
