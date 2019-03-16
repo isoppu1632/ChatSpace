@@ -30,7 +30,7 @@ ruby 2.5.1p57 (2018-03-29 revision 63029)
 
 |Column|Type|Options|
 |------|----|-------|
-|name|text|null: false|
+|name|text|null: false,unique: true|
 |creatid_at|timestamp|
 
 
@@ -60,8 +60,8 @@ ruby 2.5.1p57 (2018-03-29 revision 63029)
 
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
+|user_id|integer|foreign_key: true|
+|group_id|integer|foreign_key: true|
 
 ### Association
 - belongs_to :group
