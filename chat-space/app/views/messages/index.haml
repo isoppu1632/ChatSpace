@@ -6,8 +6,7 @@
           = current_user.name
         %ul.leftVar-header__box__menu
           %li.leftVar-header__box__menu__edit
-            = link_to new_group_path do
-              = fa_icon 'edit', class:'icon'
+            %a.fa.fa-edit{ href: 'http://google.co.jp' }
           %li.leftVar-header__box__menu__cog
             = link_to edit_user_path(current_user) do
               = fa_icon 'cog', class:'icon'
