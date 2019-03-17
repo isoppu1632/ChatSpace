@@ -1,4 +1,7 @@
-= link_to 'http://google.co.jp' do
+- current_user.groups.each do |group|
+  -# = link_to group_messages_path(group) do
   %li.group
-    %p.group__title test-group
-    %p.group__message さようなら
+    .group__title
+      = group.name
+    .group__message
+      メッセージはまだありません。

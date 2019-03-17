@@ -1,4 +1,7 @@
 .notification {
+   position: fixed;
+   top: 0;
+   width: 100%;
   .notice {
     background-color: $light_blue;
     color: $white;

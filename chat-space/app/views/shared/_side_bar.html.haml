@@ -1,0 +1,20 @@
+.leftVar
+  .leftVar-header
+    .leftVar-header__box
+      %p.leftVar-header__box__userName
+        = current_user.name
+      %ul.leftVar-header__box__menu
+        %li.leftVar-header__box__menu__edit
+          = link_to new_group_path do
+            = fa_icon 'pencil-square-o', class: 'icon'
+        %li.leftVar-header__box__menu__cog
+          = link_to edit_user_path(current_user) do
+            = fa_icon 'cog', class:'icon'
+  %ul.leftVar-groups
+    - current_user.groups.each do |group|
+      -# = link_to group_messages_path(group) do
+      %li.group
+        .group__title
+          = group.name
+        .group__message
+          メッセージはまだありません。
