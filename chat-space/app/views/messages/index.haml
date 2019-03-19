@@ -1,4 +1,6 @@
 .wrapper
+  = render 'shared/side_bar'
+
   .main
     .mainHeader
       .mainHeader__box
@@ -7,21 +9,14 @@
       .mainHeader__button
         = link_to edit_group_path(current_user) do
           .mainHeader__button__edit Edit
-    %ul.mainMessages
-      %li.mainMessages__list
-        %p.mainMessages__list__userName isoppu
-        %p.mainMessages__list__createdAt 2019/03/13(Sat) 20:00:00
-        %p.mainMessages__list__text こんにちは！
-      %li.mainMessages__list
-        %p.mainMessages__list__userName isoppu
-        %p.mainMessages__list__createdAt 2019/03/13(Sat) 20:00:00
-        %p.mainMessages__list__text こんにちは！
+    .mainMessages
+      = render @messages
 
-    .mainInput
-      %form.mainInput__box{method: :post , enctype: "#"}
-        %input.mainInput__box__type{placeholder: "type a message" }
-          %label.mainInput__box__image{for: 'image_file'}
-            %i.fa.fa-image
-            %input.mainInput__box__input{type: "file", id: 'image_file'}
-      %a.mainInput__send{ href: 'http://google.co.jp' } Send
-
+    .form
+      = form_for [@group,@message] do |f|
+        .input-box
+          = f.text_field :body, class: 'input-box__text', placeholder: 'type a message'
+          = f.label :image, class: 'input-box__image' do
+            = fa_icon 'picture-o'
+            = f.file_field :image, class: 'input-box__image__input'
+        = f.submit 'Send', class: 'form__submit'
