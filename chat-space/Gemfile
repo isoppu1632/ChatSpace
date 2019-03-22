@@ -73,7 +73,5 @@ gem 'carrierwave'
 
 gem 'mini_magick'
 
-<<<<<<< HEAD
-=======
 gem 'jquery-rails'
->>>>>>> RSpec_setting
+
