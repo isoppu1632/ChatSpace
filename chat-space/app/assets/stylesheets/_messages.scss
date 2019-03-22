@@ -109,6 +109,7 @@ a {
   padding: 46px 40px;
   height: calc(100vh - 190px);
   box-sizing: border-box;
+  overflow: auto;
   &__list {
     padding-bottom:40px;
     &__userName {
@@ -169,6 +170,12 @@ a {
     line-height: 50px;
     width: 100px;
   }
+}
+
+.field_with_errors{
+  width: 100%;
+  position: relative;
+  display: flex;
 }
 
 
