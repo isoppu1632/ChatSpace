@@ -30,7 +30,7 @@ $(function(){
     .done(function(data) {
       var html = buildHTML(data);
       $('.mainMessages').append(html)
-      $('.input-box__text,.input-box__image__input').val('')
+      $('#new_message')[0].reset()
       $('.mainMessages').animate({scrollTop: $('.mainMessages')[0].scrollHeight}, 'fast');
     })
     .fail(function() {
@@ -38,6 +38,6 @@ $(function(){
     })
     .always(() => {
       $(".form__submit").removeAttr("disabled");
-    });
-  })
+    })
+  });
 });
