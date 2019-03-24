@@ -41,7 +41,7 @@ $(function() {
       $("#user-search-result").empty();
       if (data.length !== 0 ) {
         data.forEach(function(user){
-        appendMembers(user);
+          appendMembers(user);
         });
       }
       else {
