@@ -39,7 +39,7 @@ $(function() {
 
     .done(function(data) {
       $("#user-search-result").empty();
-      if (data.length !== 0 ) {
+      if (input.length !== 0 && data != input) {
         data.forEach(function(user){
           appendMembers(user);
         });

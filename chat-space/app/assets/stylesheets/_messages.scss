@@ -129,6 +129,7 @@ a {
     &__text {
       clear: both;
       font-size: 14px;
+      height: 21px;
     }
   }
 }
@@ -176,5 +177,4 @@ a {
 .field_with_errors{
   width: 100%;
   position: relative;
-  display: flex;
 }

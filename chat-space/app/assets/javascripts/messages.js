@@ -1,7 +1,13 @@
 $(function(){
+  function scrollToNewest(){
+    $('.mainMessages').animate({scrollTop: $('.mainMessages')[0].scrollHeight}, 'fast');
+  }
+
+
   function buildHTML(message){
     var image = message.image == null ? "" : message.image
-    var html = `<div class="mainMessages__list__userName">
+    var html = `<div class="mainMessages__list" data-id="${message.id}">
+                  <div class="mainMessages__list__userName">
                     ${message.name}
                   </div>
                   <div class="mainMessages__list__createdAt">
@@ -12,9 +18,11 @@ $(function(){
                       ${message.body}
                     </p>
                     <img class="lower-message__image" src="${image}">
-                  </div>`
+                  </div>
+                </div>`
     return html;
   }
+
   $('#new_message').on('submit', function(e){
     e.preventDefault();
     var formData = new FormData(this);
@@ -31,7 +39,7 @@ $(function(){
       var html = buildHTML(data);
       $('.mainMessages').append(html)
       $('#new_message')[0].reset()
-      $('.mainMessages').animate({scrollTop: $('.mainMessages')[0].scrollHeight}, 'fast');
+      scrollToNewest();
     })
     .fail(function() {
         alert('文字を入力してください');
@@ -39,5 +47,33 @@ $(function(){
     .always(() => {
       $(".form__submit").removeAttr("disabled");
     })
+  });
+
+  $(function(){
+    var id = $('.mainMessages__list:last-child').data('id');
+    var interval = setInterval(function(){
+    var insertHTML = '';
+    if (window.location.href.match(/\/groups\/\d+\/messages/)) {
+      $.ajax({
+        url: location.href,
+        dataType: 'json',
+      })
+      .done(function(data){
+        data.forEach(function(message){
+        if (message.id > id) {
+            insertHTML += buildHTML(message);
+          }
+        });
+        $('.mainMessages').append(insertHTML);
+        scrollToNewest();
+      })
+      .fail(function(data){
+        alert('自動更新できません。更新するにはページを再度読み込んでください。');
+      });
+    } else {
+      clearInterval(interval);
+    }
+    id = $('.mainMessages__list:last-child').data('id');
+    }, 5000);
   });
 });
