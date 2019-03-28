@@ -2,7 +2,7 @@
 lock "~> 3.11.0"
 
 set :application, "ChatSpace"
-set :repo_url, "git@example.com:isoppu1632/ChatSpace.git"
+set :repo_url, "git@github.com:isoppu1632/ChatSpace.git"
 
 set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system', 'public/uploads')
 
