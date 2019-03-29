@@ -1,11 +1,11 @@
-
-.mainMessages__list{'data-id': "#{message.id}"}
-  .mainMessages__list__userName
-    = message.user.name
-  .mainMessages__list__createdAt
-    = message.created_at.strftime("%Y/%m/%d %H:%M")
-  .mainMessages__list__text
-    - if message.body.present?
-      %p.lower-message__content
-        = message.body
-    = image_tag message.image.url, class: 'lower-message__image' if message.image.present?
+.mainMessages__box
+  .mainMessages__box__list{'data-id': "#{message.id}"}
+    .mainMessages__box__list__userName
+      = message.user.name
+    .mainMessages__box__list__createdAt
+      = message.created_at.strftime("%Y/%m/%d %H:%M")
+    .mainMessages__box__list__text
+      - if message.body.present?
+        %p.mainMessages__box__list__text__content
+          = message.body
+      = image_tag message.image.url, class: 'mainMessages__box__list__text__image' if message.image.present?

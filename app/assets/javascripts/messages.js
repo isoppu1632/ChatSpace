@@ -6,19 +6,19 @@ $(function(){
 
   function buildHTML(message){
     var image = message.image == null ? "" : message.image
-    var html = `<div class="mainMessages">
-                  <div class="mainMessages__list" data-id="${message.id}">
-                    <div class="mainMessages__list__userName">
+    var html = `<div class="mainMessages__box">
+                  <div class="mainMessages__box__list" data-id="${message.id}">
+                    <div class="mainMessages__box__list__userName">
                       ${message.name}
                     </div>
-                    <div class="mainMessages__list__createdAt">
+                    <div class="mainMessages__box__list__createdAt">
                       ${message.time}
                     </div>
-                    <div class="mainMessages__list__text">
-                      <p class="lower-message__content">
+                    <div class="mainMessages__box__list__text">
+                      <p class="mainMessages__box__list__text__content">
                         ${message.body}
                       </p>
-                      <img class="lower-message__image" src="${image}">
+                      <img class="mainMessages__box__list__text__image" src="${image}">
                     </div>
                   </div>
                 </div>`

@@ -107,29 +107,30 @@ a {
 
 .mainMessages {
   background: #fafafa;
-  padding: 46px 40px;
+  padding: 46px 40px 0;
   height: calc(100vh - 190px);
-  box-sizing: border-box;
   overflow: auto;
-  &__list {
-    padding-bottom:40px;
-    &__userName {
-      float: left;
-      font-size: 16px;
-      font-weight: bold;
-      color: #434a54;
-      margin-bottom:10px;
-    }
-    &__createdAt {
-      font-size: 12px;
-      color: #999999;
-      float:left;
-      margin-left: 10px;
-    }
-    &__text {
-      clear: both;
-      font-size: 14px;
-      height: 21px;
+  &__box {
+    margin-bottom: 40px;
+    &__list {
+      padding-bottom:40px;
+      &__userName {
+        float: left;
+        font-size: 16px;
+        font-weight: bold;
+        color: #434a54;
+        margin-bottom:10px;
+      }
+      &__createdAt {
+        font-size: 12px;
+        color: #999999;
+        float:left;
+        margin-left: 10px;
+      }
+      &__text {
+        clear: both;
+        font-size: 14px;
+      }
     }
   }
 }
