@@ -52,7 +52,7 @@ $(function(){
   });
 
   $(function(){
-    var id = $('.mainMessages__list:last-child').data('id');
+    var id = $('.mainMessages__box__list:last-child').data('id');
     var interval = setInterval(function(){
     var insertHTML = '';
     if (window.location.href.match(/\/groups\/\d+\/messages/)) {
