@@ -75,7 +75,7 @@ $(function(){
     } else {
       clearInterval(interval);
     }
-    id = $('.mainMessages__list:last-child').data('id');
+    id = $('.mainMessages__box__list:last-child').data('id');
     }, 5000);
   });
 });
