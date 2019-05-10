@@ -6,8 +6,8 @@ $(function(){
 
   function buildHTML(message){
     var image = message.image == null ? "" : message.image
-    var html = `<div class="mainMessages__box">
-                  <div class="mainMessages__box__list" data-id="${message.id}">
+    var html = `<div class="mainMessages__box" data-id="${message.id}">
+                  <div class="mainMessages__box__list">
                     <div class="mainMessages__box__list__userName">
                       ${message.name}
                     </div>
@@ -44,15 +44,15 @@ $(function(){
       scrollToNewest();
     })
     .fail(function() {
-        alert('文字を入力してください');
+      alert('文字を入力してください');
     })
     .always(() => {
       $(".form__submit").removeAttr("disabled");
-    })
+    });
   });
 
   $(function(){
-    var id = $('.mainMessages__box__list:last-child').data('id');
+    var id = $('.mainMessages__box:last-child').data('id');
     var interval = setInterval(function(){
     var insertHTML = '';
     if (window.location.href.match(/\/groups\/\d+\/messages/)) {
@@ -75,7 +75,7 @@ $(function(){
     } else {
       clearInterval(interval);
     }
-    id = $('.mainMessages__box__list:last-child').data('id');
+    id = $('.mainMessages__box:last-child').data('id');
     }, 5000);
   });
 });
